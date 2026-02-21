@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Espresso Shot Log — Track Your Espresso Shots</title>
+  <meta name="description" content="Free iOS app for home baristas. Track grind size, dose, yield, time, temperature and latte art photos. No ads, no subscriptions." />
+  <meta property="og:title" content="Espresso Shot Log" />
+  <meta property="og:description" content="Free iOS app for home baristas. Track grind, dose, yield, time, temp & latte art." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="espressoshotlogv3-iOS-Default-1024x1024@1x.png" />
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#121214;
+      --text:#f3f3f4;
+      --muted:#b9b9bf;
+      --line:rgba(255,255,255,.10);
+      --accent:#ff7a00;
+      --radius:18px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 50% -10%, rgba(255,122,0,.20), transparent 60%),
+        radial-gradient(700px 500px at 15% 110%, rgba(255,122,0,.14), transparent 55%),
+        var(--bg);
+      min-height:100vh;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    /* Nav */
+    nav{
+      max-width:960px;margin:0 auto;padding:20px 16px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px}
+    .logo img{width:36px;height:36px;border-radius:8px}
+    .nav-links{display:flex;gap:24px;font-size:14px}
+    .nav-links a{color:var(--muted);transition:color .2s}
+    .nav-links a:hover{color:var(--text);text-decoration:none}
+
+    /* Hero */
+    .hero{
+      max-width:960px;margin:0 auto;padding:60px 16px 40px;
+      text-align:center;
+    }
+    .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.15;margin-bottom:16px}
+    .hero h1 span{color:var(--accent)}
+    .hero p{font-size:18px;color:var(--muted);max-width:560px;margin:0 auto 32px;line-height:1.6}
+    .cta{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--accent);color:#fff;
+      padding:14px 28px;border-radius:12px;font-size:16px;font-weight:600;
+      transition:transform .15s,box-shadow .15s;
+    }
+    .cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,122,0,.35);text-decoration:none}
+    .cta svg{width:20px;height:20px}
+    .badge{margin-top:16px;color:var(--muted);font-size:13px}
+
+    /* Features */
+    .features{
+      max-width:960px;margin:0 auto;padding:60px 16px;
+    }
+    .features h2{text-align:center;font-size:28px;margin-bottom:40px}
+    .grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+    .feat{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+    }
+    .feat-icon{font-size:28px;margin-bottom:12px}
+    .feat h3{font-size:17px;margin-bottom:8px}
+    .feat p{font-size:14px;color:var(--muted);line-height:1.5}
+
+    /* Privacy */
+    .privacy{
+      max-width:860px;margin:0 auto;padding:60px 16px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+    }
+    .card h2{font-size:24px;margin-bottom:6px}
+    .card .sub{color:var(--muted);font-size:13px;margin-bottom:4px}
+    .divider{height:1px;background:var(--line);margin:18px 0}
+    .card h3{margin-top:20px;font-size:16px;margin-bottom:8px}
+    .card p,.card li{font-size:15px;line-height:1.6;color:rgba(255,255,255,.88)}
+    .card ul{margin:8px 0 0 18px;list-style:disc}
+
+    /* Footer */
+    footer{
+      max-width:960px;margin:0 auto;padding:30px 16px;
+      color:rgba(255,255,255,.45);font-size:12px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+      border-top:1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="espressoshotlogv3-iOS-Default-1024x1024@1x.png" alt="Espresso Shot Log icon" />
+      Espresso Shot Log
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#privacy">Privacy</a>
+      <a href="https://apps.apple.com/us/app/espresso-shot-log/id6758272348">Download</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Track every shot.<br><span>Dial in perfection.</span></h1>
+    <p>A dead-simple iOS app for home baristas. Log your grind size, dose, yield, time, temperature, and latte art photos. Free forever, no ads, no subscriptions.</p>
+    <a class="cta" href="https://apps.apple.com/us/app/espresso-shot-log/id6758272348">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download Free on App Store
+    </a>
+    <p class="badge">iOS only. 100% free. No account required.</p>
+  </section>
+
+  <section class="features" id="features">
+    <h2>Everything you need. Nothing you don't.</h2>
+    <div class="grid">
+      <div class="feat">
+        <div class="feat-icon">&#9878;</div>
+        <h3>Grind Size</h3>
+        <p>Log your grinder setting for every shot so you never forget what worked for each bean.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">&#9879;</div>
+        <h3>Dose & Yield</h3>
+        <p>Track input dose and output yield to nail your brew ratio every time.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">&#9201;</div>
+        <h3>Shot Time</h3>
+        <p>Record extraction time to keep your pulls in the sweet spot.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">&#127777;</div>
+        <h3>Temperature</h3>
+        <p>Note your brew temperature for full control over extraction variables.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">&#9749;</div>
+        <h3>Latte Art</h3>
+        <p>Snap photos of your latte art and track your progress over time.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">&#128274;</div>
+        <h3>Private & Local</h3>
+        <p>All data stays on your device. No account, no cloud, no tracking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="privacy" id="privacy">
+    <div class="card">
+      <h2>Privacy Policy</h2>
+      <p class="sub">Espresso Shot Log</p>
+      <p class="sub"><strong>Effective date:</strong> <span id="eff"></span></p>
+
+      <div class="divider"></div>
+
+      <p>
+        Espresso Shot Log is a minimalist espresso shot log designed to help you track and improve your espresso workflow.
+        This Privacy Policy explains what data the app collects and how it is used.
+      </p>
+
+      <h3>Data collected</h3>
+      <p>Espresso Shot Log collects only the following data types:</p>
+      <ul>
+        <li><strong>Name</strong> — used to label or personalize your espresso logs.</li>
+        <li><strong>Photos</strong> — optional media you choose to add (for example, latte art photos).</li>
+      </ul>
+
+      <h3>How your data is used</h3>
+      <p>The data you provide is used solely to display and organize your espresso logs within the app. It is not used for advertising, analytics, or marketing.</p>
+
+      <h3>Data storage</h3>
+      <p>All data is stored locally on your device. Espresso Shot Log does not require an account and does not upload your data to external servers.</p>
+
+      <h3>Data sharing</h3>
+      <p>Your data is not sold, rented, or shared with third parties.</p>
+
+      <h3>Data retention and deletion</h3>
+      <p>Your data remains on your device until you delete it or uninstall the app.</p>
+
+      <h3>Children's privacy</h3>
+      <p>Espresso Shot Log is not directed to children under the age of 13, and no data is knowingly collected from children.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>This Privacy Policy may be updated from time to time. Any changes will be reflected on this page by updating the effective date.</p>
+
+      <h3>Contact</h3>
+      <p>If you have questions about this Privacy Policy, contact: <a href="mailto:harrisonrampell@gmail.com">harrisonrampell@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; <span id="y"></span> Espresso Shot Log. Built by <a href="https://x.com/Cs50Is30262">@Cs50Is30262</a></div>
+    <div>Free forever. No ads. No subscriptions.</div>
+  </footer>
+
+  <script>
+    const now = new Date();
+    document.getElementById("y").textContent = now.getFullYear();
+    document.getElementById("eff").textContent =
+      now.toLocaleDateString(undefined, { year:"numeric", month:"long", day:"numeric" });
+  </script>
+</body>
+</html>
