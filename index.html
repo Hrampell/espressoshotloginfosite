@@ -61,6 +61,25 @@
     .cta svg{width:20px;height:20px}
     .hero .badge{margin:4px auto 0;color:var(--muted);font-size:13px}
 
+    /* Preview */
+    .preview{
+      max-width:960px;margin:0 auto;padding:0 16px 40px;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+    }
+    .preview-track{
+      display:flex;gap:16px;justify-content:center;
+      padding:8px 0;
+    }
+    .preview-track img{
+      height:420px;width:auto;border-radius:16px;
+      box-shadow:0 8px 30px rgba(0,0,0,.5);
+      flex-shrink:0;
+    }
+    @media(max-width:700px){
+      .preview-track{justify-content:flex-start}
+      .preview-track img{height:340px}
+    }
+
     /* Features */
     .features{
       max-width:960px;margin:0 auto;padding:60px 16px;
@@ -129,6 +148,16 @@
       Download Free on App Store
     </a>
     <p class="badge">iOS only. 100% free. No account required.</p>
+  </section>
+
+  <section class="preview">
+    <div class="preview-track">
+      <img src="screenshot1.jpg" alt="Espresso Shot Log - shot list" />
+      <img src="screenshot2.jpg" alt="Espresso Shot Log - shot detail" />
+      <img src="screenshot3.jpg" alt="Espresso Shot Log - new shot" />
+      <img src="screenshot4.jpg" alt="Espresso Shot Log - bean tracking" />
+      <img src="screenshot5.jpg" alt="Espresso Shot Log - streak" />
+    </div>
   </section>
 
   <section class="features" id="features">
