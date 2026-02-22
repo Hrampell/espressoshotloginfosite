@@ -61,23 +61,40 @@
     .cta svg{width:20px;height:20px}
     .hero .badge{margin:4px auto 0;color:var(--muted);font-size:13px}
 
-    /* Preview */
+    /* Preview – fanned carousel */
     .preview{
-      max-width:960px;margin:0 auto;padding:0 16px 40px;
-      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      max-width:1100px;margin:0 auto;padding:20px 16px 60px;
+      overflow:hidden;
     }
     .preview-track{
-      display:flex;gap:16px;justify-content:center;
-      padding:8px 0;
+      display:flex;align-items:center;justify-content:center;
+      gap:0;padding:40px 0 20px;
+      perspective:1200px;
     }
     .preview-track img{
-      height:420px;width:auto;border-radius:16px;
-      box-shadow:0 8px 30px rgba(0,0,0,.5);
+      height:440px;width:auto;border-radius:20px;
+      box-shadow:0 12px 40px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.3);
       flex-shrink:0;
+      transition:transform .4s cubic-bezier(.25,.8,.25,1),box-shadow .4s ease,z-index 0s;
+      position:relative;
+    }
+    /* Fan-out: outer cards rotated & overlapping */
+    .preview-track img:nth-child(1){transform:rotate(-6deg) translateX(40px) scale(.92);z-index:1}
+    .preview-track img:nth-child(2){transform:rotate(-3deg) translateX(16px) scale(.96);z-index:2}
+    .preview-track img:nth-child(3){transform:rotate(0deg) scale(1.02);z-index:4}
+    .preview-track img:nth-child(4){transform:rotate(3deg) translateX(-16px) scale(.96);z-index:2}
+    .preview-track img:nth-child(5){transform:rotate(6deg) translateX(-40px) scale(.92);z-index:1}
+    /* Hover: card pops up */
+    .preview-track img:hover{
+      transform:rotate(0deg) translateY(-14px) scale(1.06) !important;
+      box-shadow:0 24px 60px rgba(255,122,0,.25),0 8px 20px rgba(0,0,0,.4);
+      z-index:10 !important;
     }
     @media(max-width:700px){
-      .preview-track{justify-content:flex-start}
-      .preview-track img{height:340px}
+      .preview{overflow-x:auto;-webkit-overflow-scrolling:touch}
+      .preview-track{justify-content:flex-start;gap:12px;padding:20px 0}
+      .preview-track img{height:320px;transform:none !important;flex-shrink:0}
+      .preview-track img:hover{transform:translateY(-8px) scale(1.03) !important}
     }
 
     /* Features */
